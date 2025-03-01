@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eunus' modern portfolio showcasing skills and projects.">
+    <meta name="keywords" content="Eunus, portfolio, web developer, animation, SEO, contact">
+    <meta name="author" content="Eunus">
+    <title>Eunus | Modern Portfolio</title>
+    <style>
+        /* Preloader Styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .circle {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            margin: 10px;
+            animation: bounce 1.2s ease-in-out infinite;
+        }
+        .circle:nth-child(2) { animation-delay: 0.2s; }
+        .circle:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+        body.night-mode {
+            background: #1a1a1a;
+            color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            animation: slideIn 1s ease;
+        }
+        body.night-mode header { background: #111; }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+        body.night-mode .section { background: #2a2a2a; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border 0.3s;
+        }
+        body.night-mode .contact-form input, body.night-mode .contact-form textarea {
+            border: 1px solid #555;
+            background: #333;
+            color: #fff;
+        }
+        .contact-form button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .contact-form button:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+        }
+        body.night-mode footer { background: #111; }
+
+        /* Night/Day Mode Toggle */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .mode-toggle:hover { background: #2980b9; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .section { padding: 1rem; }
+            .circle { width: 30px; height: 30px; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5rem; }
+            .contact-form button { width: 100%; }
+            .mode-toggle { top: 10px; right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Mode Toggle Button -->
+    <button class="mode-toggle" id="modeToggle">Night Mode</button>
+
+    <!-- Header -->
+    <header>
+        <h1>Eunus</h1>
+        <p>Web Developer | Animator | Creative Mind</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hi, I'm Eunus, a passionate web developer with a knack for creating modern, animated, and SEO-friendly websites. I love bringing ideas to life with clean code and stunning visuals.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Project 1:</strong> A dynamic website with animations.</li>
+                <li><strong>Project 2:</strong> SEO-optimized e-commerce platform.</li>
+                <li><strong>Project 3:</strong> Interactive portfolio with mailing feature.</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h2>Contact Me</h2>
+            <form class="contact-form" action="mailto:contact@eunus.com.bd" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Eunus. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Preloader and Mode Toggle -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Night/Day Mode Toggle
+        const modeToggle = document.getElementById('modeToggle');
+        modeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+            modeToggle.textContent = document.body.classList.contains('night-mode') ? 'Day Mode' : 'Night Mode';
+        });
+    </script>
+</body>
+</html>
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
